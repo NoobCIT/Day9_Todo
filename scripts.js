@@ -5,7 +5,7 @@ for (let i = 0; i < 3; i++) {
 }
 
 //Add listener to allow divs to be drop off targets
-let dropOffs = document.querySelectorAll('#dropzone');
+let dropOffs = document.querySelectorAll('#items');
 dropOffs.forEach(function(element) {
   element.addEventListener('drop', drop);
   element.addEventListener('dragover', allowDrop);
@@ -70,9 +70,7 @@ function drop(event) {
   //console.log(document.getElementsByClassName(data)[0]);
   //console.log(document.getElementsByClassName(data)[1]);
   console.log(event.target.parentNode.parentNode);
-  if (event.target.parentNode.parentNode == 'ideas' || event.target.parentNode.parentNode == 'progress' || event.target.parentNode.parentNode == 'finished') {
-    event.target.parentNode.parentNode.appendChild(document.getElementsByClassName(data)[0]);
-  }
+  event.target.parentNode.parentNode.appendChild(document.getElementsByClassName(data)[0]);
 }
 
 function allowDrop(event) {
